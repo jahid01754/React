@@ -3,6 +3,7 @@ export default function Button({children}){
         <>
             <button>{children}</button>
             <button>stop movie</button>
+            <button>Start movie</button>
         </>
     );
 
