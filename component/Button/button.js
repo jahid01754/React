@@ -1,3 +1,9 @@
 export default function Button({children}){
-    <button>{children}</button>
+    return (
+        <>
+            <button>{children}</button>
+            <button>stop movie</button>
+        </>
+    );
+
 }
