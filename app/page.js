@@ -1,9 +1,8 @@
-"use client"
-import Toolbar from "@/component/Toolbar/toolBar";
 
+import StringConcatenation from "@/component/Lesson 1/stringConcatenation";
 
 export default function Home() {
   return (
-    <Toolbar/>
+    <StringConcatenation />
   );
 }
