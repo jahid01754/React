@@ -1,15 +1,19 @@
 
+
 import Counter from "@/component/Lesson 1/counter";
 import ListOFItems from "@/component/Lesson 1/listOfItems";
 import StringConcatenation from "@/component/Lesson 1/stringConcatenation";
+import ToggleButton from "@/component/Lesson 1/toogleButton";
 
 export default function Home() {
   return (
     <>
-    <StringConcatenation />
-    <ListOFItems/>
-    <br/>
-    <Counter/>
+      <StringConcatenation />
+      <ListOFItems/>
+      
+      <Counter/>
+      <ToggleButton/>
+        
     </>
   );
 }
