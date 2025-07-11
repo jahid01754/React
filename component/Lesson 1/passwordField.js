@@ -37,7 +37,7 @@ export default function PasswordField(){
                     className="border border-slate-400 px-3 py-2 rounded"
                 ></input>
 
-                <buttton type ="button" onClick = {togglePasswordVisibility} className="">{showPassword ? "Hide": "Show"}</buttton>
+                <buttton type ="button" onClick = {togglePasswordVisibility} className="border mt-5">{showPassword ? "Hide": "Show"}</buttton>
             </div>
         </div>
     );
