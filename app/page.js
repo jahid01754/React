@@ -1,5 +1,3 @@
-
-
 import Counter from "@/component/Lesson 1/counter";
 import ListOFItems from "@/component/Lesson 1/listOfItems";
 import PasswordField from "@/component/Lesson 1/passwordField";
@@ -11,13 +9,12 @@ export default function Home() {
   return (
     <>
       <StringConcatenation />
-      <ListOFItems/>
-      
-      <Counter/>
-      <ToggleButton/>
-      <PasswordField/>
-      <SwitchTheme/>
-        
+      <ListOFItems />
+
+      <Counter />
+      <ToggleButton />
+      <PasswordField />
+      <SwitchTheme />
     </>
   );
 }

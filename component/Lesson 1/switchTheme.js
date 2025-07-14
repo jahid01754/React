@@ -6,7 +6,6 @@
 
 // import { useState } from "react";
 
-
 // import { HiHome } from "react-icons/hi";
 // import Link from "next/link";
 
@@ -39,7 +38,6 @@
 //   );
 // }
 
-
 // import { HiHome } from "react-icons/hi";
 // import Link from "next/link";
 
@@ -47,7 +45,7 @@
 //   return (
 //     <div className="flex items-center justify-center my-10">
 //       <nav className="bg-white dark:bg-gray-800 shadow-md px-6 py-3 rounded-full inline-flex items-center space-x-2 sm:space-x-4 overflow-x-auto text-sm">
-        
+
 //         {/* Home Link */}
 //         <Link href="/" className="text-gray-500 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
 //           <HiHome size={20} />
@@ -80,7 +78,6 @@
 //   );
 // }
 
-
 // import Link from "next/link";
 
 // export default function Breadcrumb() {
@@ -103,21 +100,51 @@
 //   );
 // }
 
-"use client"
+// "use client"
+// import { useState } from "react";
+
+// export default function SwitchTheme(){
+
+//     const [isOn, setIsOn] = useState(false);
+
+//     const toggleButton = () => {
+//         setIsOn(!isOn);
+//     }
+//     return(
+//         <div className="flex justify-center items-center mt-10 mb-10">
+//             <button onClick={toggleButton} className={`w-20 h-10 flex items-center rounded-full p-1 transition duration-300 ease-in-out ${isOn ? "bg-green-500" : "bg-gray-300"}`}>
+//                 <div className={`bg-white w-8 h-8 rounded-full shadow-md trasnform transition duration-300 ease-in-out ${isOn ? "translate-x-10" : "translate-x-0"}`}></div>
+//             </button>
+//         </div>
+//     );
+// }
+
+"use client";
+
 import { useState } from "react";
 
-export default function SwitchTheme(){
+export default function SwitchTheme() {
+  const [isOn, setIson] = useState(false);
 
-    const [isOn, setIsOn] = useState(false);
-
-    const toggleButton = () => {
-        setIsOn(!isOn);
-    }
-    return(
-        <div className="flex justify-center items-center mt-10 mb-10">
-            <button onClick={toggleButton} className={`w-20 h-10 flex items-center rounded-full p-1 transition duration-300 ease-in-out ${isOn ? "bg-green-500" : "bg-gray-300"}`}>
-                <div className={`bg-white w-8 h-8 rounded-full shadow-md trasnform transition duration-300 ease-in-out ${isOn ? "translate-x-10" : "translate-x-0"}`}></div>
-            </button>
-        </div>
-    );
+  const handleToggle = () => {
+    setIson(!isOn);
+  };
+  return (
+    <>
+      <div className="flex justify-center items-center mt-10 mb-10">
+        <button
+          onClick={handleToggle}
+          className={` w-20 h-10 rounded-full p-1 flex items-center transition duration-300 ease-in-out ${
+            isOn ? "bg-green-500" : "bg-gray-400"
+          }`}
+        >
+          <div
+            className={`w-8 h-8 bg-white rounded-full transition duration-300 ease-in-out shadow-md ${
+              isOn ? "translate-x-10" : "translate-x-0"
+            }`}
+          ></div>
+        </button>
+      </div>
+    </>
+  );
 }
