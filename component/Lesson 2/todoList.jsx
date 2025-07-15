@@ -1,4 +1,10 @@
+"use client";
+import { useState } from "react";
+
 export default function ToDoList(){
+
+    const [addTask, setAddTask] = useState("");
+
     return(
     <>
         <div className="flex justify-center items-center mt-10">
