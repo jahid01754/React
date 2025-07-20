@@ -1,38 +1,61 @@
 "use client";
+
 import { useState } from "react";
 
-export default function ToDoList(){
+export default function TodoList(){
 
-    const [addTask, setAddTask] = useState("");
+    const [inputField, setInputField] = useState("");
+    const [addTask, setAddTask] = useState([]);
+
+    const handleTask = () => {
+        if(inputField.trim() !== ""){
+            setAddTask([...addTask, inputField]);
+            setInputField("");
+        }
+    }
 
     const handleClear = () => {
-
+        setInputField("");
     }
 
     return(
-    <>
-        <div className="flex justify-center items-center mt-10">
-            <div className="w-[40%] h-[40rem] bg-gray-100 shadow-2xl flex flex-col justify-around items-center">
-                <div className="flex flex-col items-center justify-center  gap-4">
-                    <input 
-                        
-                        className="w-[20rem] h-[2rem] bg-gray-200 shadow-sm outline-none px-4 rounded-lg">
-
-                    </input>
-
-                    <div className="flex gap-2">
-                        <button className="bg-gray-300 border border-gray-300 px-6 py-3 hover:bg-slate-600 hover:text-white transition duration-150 rounded-lg active:bg-slate-700 active:shadow-lg">Add Task</button>
-                        <button 
-                            onClick={handleClear()}
-                            className="bg-gray-300 border border-gray-200 px-6 py-3 rounded-lg hover:bg-slate-600 hover:text-white transition duration-150 active:bg-slate-700 active:shadow-lg">Clear</button>
+        <>
+            <div className="flex items-center justify-center mt-10 px-4">
+                <div className="w-full max-w-xl h-[40rem] border border-gray-100 rounded-xl shadow-xl p-6 gap-8 flex flex-col">
+                    <div className="w-full flex flex-col items-center gap-4 flex-shrink-0">
+                        <input
+                            value={inputField}
+                            onChange={(e) => setInputField(e.target.value)} 
+                            className="w-full h-10 bg-gray-200 border-none outline-none px-4 rounded-lg"
+                            placeholder="Add the task..."
+                        ></input>
+                        <div className="flex gap-2 w-full">
+                            <button 
+                                className="flex-1 bg-green-400 py-2 rounded-md hover:bg-green-500 transition duration-200 active:shadow-lg"
+                                onClick={handleTask}
+                            >
+                                Add Task
+                            </button>
+                            <button 
+                                className="flex-1 bg-red-400 py-2 rounded-md hover:bg-red-500 transition duration-200 active:shadow-lg"
+                                onClick={handleClear}
+                            >
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    <div className="flex-1 overflow-y-auto w-full">
+                        <p className="text-center text-lg font-semibold">Today's Task</p>
+                        <ul className="list-disc space-y-2 pl-6">
+                            {addTask.map((task, taskIndex) => (
+                                <li key={taskIndex}>
+                                    {task}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
-                <div>
-                    <p>Todays task</p>
-                </div>
             </div>
-        </div>
-    
-    </>
-);
+        </>
+    );
 }
